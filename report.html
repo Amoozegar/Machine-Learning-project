@@ -11783,19 +11783,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Welcome to the second project of the Machine Learning Engineer Nanodegree! In this notebook, some template code has already been provided for you, and it will be your job to implement the additional functionality necessary to successfully complete this project. Sections that begin with <strong>'Implementation'</strong> in the header indicate that the following block of code will require additional functionality which you must provide. Instructions will be provided for each section and the specifics of the implementation are marked in the code block with a <code>'TODO'</code> statement. Please be sure to read the instructions carefully!</p>
-<p>In addition to implementing code, there will be questions that you must answer which relate to the project and your implementation. Each section where you will answer a question is preceded by a <strong>'Question X'</strong> header. Carefully read each question and provide thorough answers in the following text boxes that begin with <strong>'Answer:'</strong>. Your project submission will be evaluated based on your answers to each of the questions and the implementation you provide.</p>
-<blockquote><p><strong>Note:</strong> Please specify WHICH VERSION OF PYTHON you are using when submitting this notebook. Code and Markdown cells can be executed using the <strong>Shift + Enter</strong> keyboard shortcut. In addition, Markdown cells can be edited by typically double-clicking the cell to enter edit mode.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started">&#182;</a></h2><p>In this project, you will employ several supervised algorithms of your choice to accurately model individuals' income using data collected from the 1994 U.S. Census. You will then choose the best candidate algorithm from preliminary results and further optimize this algorithm to best model the data. Your goal with this implementation is to construct a model that accurately predicts whether an individual makes more than $50,000. This sort of task can arise in a non-profit setting, where organizations survive on donations.  Understanding an individual's income can help a non-profit better understand how large of a donation to request, or whether or not they should reach out to begin with.  While it can be difficult to determine an individual's general income bracket directly from public sources, we can (as we will see) infer this value from other publically available features.</p>
+<h2 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started">&#182;</a></h2><p>In this project, I will employ several supervised algorithms of my choice to accurately model individuals' income using data collected from the 1994 U.S. Census. I will then choose the best candidate algorithm from preliminary results and further optimize this algorithm to best model the data. My goal with this implementation is to construct a model that accurately predicts whether an individual makes more than $50,000. This sort of task can arise in a non-profit setting, where organizations survive on donations.  Understanding an individual's income can help a non-profit better understand how large of a donation to request, or whether or not they should reach out to begin with.  While it can be difficult to determine an individual's general income bracket directly from public sources, we can (as we will see) infer this value from other publically available features.</p>
 <p>The dataset for this project originates from the <a href="https://archive.ics.uci.edu/ml/datasets/Census+Income">UCI Machine Learning Repository</a>. The datset was donated by Ron Kohavi and Barry Becker, after being published in the article <em>"Scaling Up the Accuracy of Naive-Bayes Classifiers: A Decision-Tree Hybrid"</em>. You can find the article by Ron Kohavi <a href="https://www.aaai.org/Papers/KDD/1996/KDD96-033.pdf">online</a>. The data we investigate here consists of small changes to the original dataset, such as removing the <code>'fnlwgt'</code> feature and records with missing or ill-formatted entries.</p>
 
 </div>
@@ -11806,8 +11794,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Exploring-the-Data">Exploring the Data<a class="anchor-link" href="#Exploring-the-Data">&#182;</a></h2><p>Run the code cell below to load necessary Python libraries and load the census data. Note that the last column from this dataset, <code>'income'</code>, will be our target label (whether an individual makes more than, or at most, $50,000 annually). All other columns are features about each individual in the census database.</p>
-
+<h2 id="Exploring-the-Data">Exploring the Data<a class="anchor-link" href="#Exploring-the-Data">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12052,14 +12039,13 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Implementation:-Data-Exploration">Implementation: Data Exploration<a class="anchor-link" href="#Implementation:-Data-Exploration">&#182;</a></h3><p>A cursory investigation of the dataset will determine how many individuals fit into either group, and will tell us about the percentage of these individuals making more than \$50,000. In the code cell below, you will need to compute the following:</p>
+<h3 id="Implementation:-Data-Exploration">Implementation: Data Exploration<a class="anchor-link" href="#Implementation:-Data-Exploration">&#182;</a></h3><p>A cursory investigation of the dataset will determine how many individuals fit into either group, and will tell us about the percentage of these individuals making more than \$50,000. In the code cell below, we will need to compute the following:</p>
 <ul>
 <li>The total number of records, <code>'n_records'</code></li>
 <li>The number of individuals making more than \$50,000 annually, <code>'n_greater_50k'</code>.</li>
 <li>The number of individuals making at most \$50,000 annually, <code>'n_at_most_50k'</code>.</li>
 <li>The percentage of individuals making more than \$50,000 annually, <code>'greater_percent'</code>.</li>
 </ul>
-<p><strong> HINT: </strong> You may need to look at the table above to understand how the <code>'income'</code> entries are formatted.</p>
 
 </div>
 </div>
@@ -12153,7 +12139,6 @@ Percentage of individuals making more than $50,000: 24.7843969749%
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Transforming-Skewed-Continuous-Features">Transforming Skewed Continuous Features<a class="anchor-link" href="#Transforming-Skewed-Continuous-Features">&#182;</a></h3><p>A dataset may sometimes contain at least one feature whose values tend to lie near a single number, but will also have a non-trivial number of vastly larger or smaller values than that single number.  Algorithms can be sensitive to such distributions of values and can underperform if the range is not properly normalized. With the census dataset two features fit this description: '<code>capital-gain'</code> and <code>'capital-loss'</code>.</p>
-<p>Run the code cell below to plot a histogram of these two features. Note the range of the values present and how they are distributed.</p>
 
 </div>
 </div>
@@ -12495,7 +12480,6 @@ AQEAALQ9AGaz6XodUMKrAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For highly-skewed feature distributions such as <code>'capital-gain'</code> and <code>'capital-loss'</code>, it is common practice to apply a <a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)">logarithmic transformation</a> on the data so that the very large and very small values do not negatively affect the performance of a learning algorithm. Using a logarithmic transformation significantly reduces the range of values caused by outliers. Care must be taken when applying this transformation however: The logarithm of <code>0</code> is undefined, so we must translate the values by a small amount above <code>0</code> to apply the the logarithm successfully.</p>
-<p>Run the code cell below to perform a transformation on the data and visualize the results. Again, note the range of values and how they are distributed.</p>
 
 </div>
 </div>
@@ -12832,7 +12816,6 @@ SZIkqbX/Dw7mqWDp/pY1AAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Normalizing-Numerical-Features">Normalizing Numerical Features<a class="anchor-link" href="#Normalizing-Numerical-Features">&#182;</a></h3><p>In addition to performing transformations on features that are highly skewed, it is often good practice to perform some type of scaling on numerical features. Applying a scaling to the data does not change the shape of each feature's distribution (such as <code>'capital-gain'</code> or <code>'capital-loss'</code> above); however, normalization ensures that each feature is treated equally when applying supervised learners. Note that once scaling is applied, observing the data in its raw form will no longer have the same original meaning, as exampled below.</p>
-<p>Run the code cell below to normalize each numerical feature. We will use <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html"><code>sklearn.preprocessing.MinMaxScaler</code></a> for this.</p>
 
 </div>
 </div>
@@ -13038,7 +13021,7 @@ SZIkqbX/Dw7mqWDp/pY1AAAAAElFTkSuQmCC
 </tr>
 </tbody>
 </table>
-<p>Additionally, as with the non-numeric features, we need to convert the non-numeric target label, <code>'income'</code> to numerical values for the learning algorithm to work. Since there are only two possible categories for this label ("&lt;=50K" and "&gt;50K"), we can avoid using one-hot encoding and simply encode these two categories as <code>0</code> and <code>1</code>, respectively. In code cell below, you will need to implement the following:</p>
+<p>Additionally, as with the non-numeric features, we need to convert the non-numeric target label, <code>'income'</code> to numerical values for the learning algorithm to work. Since there are only two possible categories for this label ("&lt;=50K" and "&gt;50K"), we can avoid using one-hot encoding and simply encode these two categories as <code>0</code> and <code>1</code>, respectively. In code cell below, we will need to implement the following:</p>
 <ul>
 <li>Use <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.get_dummies.html?highlight=get_dummies#pandas.get_dummies"><code>pandas.get_dummies()</code></a> to perform one-hot encoding on the <code>'features_log_minmax_transform'</code> data.</li>
 <li>Convert the target label <code>'income_raw'</code> to numerical entries.<ul>
@@ -13098,7 +13081,6 @@ SZIkqbX/Dw7mqWDp/pY1AAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Shuffle-and-Split-Data">Shuffle and Split Data<a class="anchor-link" href="#Shuffle-and-Split-Data">&#182;</a></h3><p>Now all <em>categorical variables</em> have been converted into numerical features, and all numerical features have been normalized. As always, we will now split the data (both features and their labels) into training and test sets. 80% of the data will be used for training and 20% for testing.</p>
-<p>Run the code cell below to perform this split.</p>
 
 </div>
 </div>
@@ -13152,7 +13134,7 @@ Testing set has 9045 samples.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Evaluating-Model-Performance">Evaluating Model Performance<a class="anchor-link" href="#Evaluating-Model-Performance">&#182;</a></h2><p>In this section, we will investigate four different algorithms, and determine which is best at modeling the data. Three of these algorithms will be supervised learners of your choice, and the fourth algorithm is known as a <em>naive predictor</em>.</p>
+<h2 id="Evaluating-Model-Performance">Evaluating Model Performance<a class="anchor-link" href="#Evaluating-Model-Performance">&#182;</a></h2><p>In this section, we will investigate four different algorithms, and determine which is best at modeling the data. Three of these algorithms will be supervised learners of our choice, and the fourth algorithm is known as a <em>naive predictor</em>.</p>
 
 </div>
 </div>
@@ -13181,12 +13163,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-1---Naive-Predictor-Performace">Question 1 - Naive Predictor Performace<a class="anchor-link" href="#Question-1---Naive-Predictor-Performace">&#182;</a></h3><ul>
-<li>If we chose a model that always predicted an individual made more than $50,000, what would  that model's accuracy and F-score be on this dataset? You must use the code cell below and assign your results to <code>'accuracy'</code> and <code>'fscore'</code> to be used later.</li>
-</ul>
-<p><strong> Please note </strong> that the the purpose of generating a naive predictor is simply to show what a base model without any intelligence would look like. In the real world, ideally your base model would be either the results of a previous model or could be based on a research paper upon which you are looking to improve. When there is no benchmark model set, getting a result better than random choice is a place you could start from.</p>
-<p><strong> HINT: </strong></p>
-<ul>
+<h3 id="Naive-Predictor-Performace">Naive Predictor Performace<a class="anchor-link" href="#Naive-Predictor-Performace">&#182;</a></h3><ul>
 <li>When we have a model that always predicts '1' (i.e. the individual makes more than 50k) then our model will have no True Negatives(TN) or False Negatives(FN) as we are not making any negative('0' value) predictions. Therefore our Accuracy in this case becomes the same as our Precision(True Positives/(True Positives + False Positives)) as every prediction that we have made with value '1' that should have '0' becomes a False Positive; therefore our denominator in this case is the total number of records we have in total. </li>
 <li>Our Recall score(True Positives/(True Positives + False Negatives)) in this setting becomes 1 as we have no False Negatives.</li>
 </ul>
@@ -13260,25 +13237,7 @@ Naive Predictor: [Accuracy score: 0.2478, F-score: 0.2917]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-2---Model-Application">Question 2 - Model Application<a class="anchor-link" href="#Question-2---Model-Application">&#182;</a></h3><p>List three of the supervised learning models above that are appropriate for this problem that you will test on the census data. For each model chosen</p>
-<ul>
-<li>Describe one real-world application in industry where the model can be applied. </li>
-<li>What are the strengths of the model; when does it perform well?</li>
-<li>What are the weaknesses of the model; when does it perform poorly?</li>
-<li>What makes this model a good candidate for the problem, given what you know about the data?</li>
-</ul>
-<p><strong> HINT: </strong></p>
-<p>Structure your answer in the same format as above^, with 4 parts for each of the three models you pick. Please include references with your answer.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
-<ul>
+<h3 id="List-of-three-supervised-learning-models-that-are-appropriate-for-this-problem:">List of three supervised learning models that are appropriate for this problem:<a class="anchor-link" href="#List-of-three-supervised-learning-models-that-are-appropriate-for-this-problem:">&#182;</a></h3><ul>
 <li>Decision Trees
 applications: They have been applied to pretty much every classification problem : credit scoring, crime risk, medical diagnosis, failure prediction, etc.
 strength: they are good for binary classification. They handle both categorical and numerical features, and they are fast.
@@ -13315,8 +13274,8 @@ since the data is large in this case, I expect the income level boundary to be n
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Implementation---Creating-a-Training-and-Predicting-Pipeline">Implementation - Creating a Training and Predicting Pipeline<a class="anchor-link" href="#Implementation---Creating-a-Training-and-Predicting-Pipeline">&#182;</a></h3><p>To properly evaluate the performance of each model you've chosen, it's important that you create a training and predicting pipeline that allows you to quickly and effectively train models using various sizes of training data and perform predictions on the testing data. Your implementation here will be used in the following section.
-In the code block below, you will need to implement the following:</p>
+<h3 id="Implementation---Creating-a-Training-and-Predicting-Pipeline">Implementation - Creating a Training and Predicting Pipeline<a class="anchor-link" href="#Implementation---Creating-a-Training-and-Predicting-Pipeline">&#182;</a></h3><p>To properly evaluate the performance of each model we've chosen, it's important that we create a training and predicting pipeline that allows us to quickly and effectively train models using various sizes of training data and perform predictions on the testing data. Our implementation here will be used in the following section.
+In the code block below, we will need to implement the following:</p>
 <ul>
 <li>Import <code>fbeta_score</code> and <code>accuracy_score</code> from <a href="http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics"><code>sklearn.metrics</code></a>.</li>
 <li>Fit the learner to the sampled training data and record the training time.</li>
@@ -13326,7 +13285,7 @@ In the code block below, you will need to implement the following:</p>
 </li>
 <li>Calculate the accuracy score for both the training subset and testing set.</li>
 <li>Calculate the F-score for both the training subset and testing set.<ul>
-<li>Make sure that you set the <code>beta</code> parameter!</li>
+<li>Make sure that we set the <code>beta</code> parameter!</li>
 </ul>
 </li>
 </ul>
@@ -13401,12 +13360,12 @@ In the code block below, you will need to implement the following:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Implementation:-Initial-Model-Evaluation">Implementation: Initial Model Evaluation<a class="anchor-link" href="#Implementation:-Initial-Model-Evaluation">&#182;</a></h3><p>In the code cell, you will need to implement the following:</p>
+<h3 id="Implementation:-Initial-Model-Evaluation">Implementation: Initial Model Evaluation<a class="anchor-link" href="#Implementation:-Initial-Model-Evaluation">&#182;</a></h3><p>In the code cell, we will need to implement the following:</p>
 <ul>
-<li>Import the three supervised learning models you've discussed in the previous section.</li>
+<li>Import the three supervised learning models we've discussed in the previous section.</li>
 <li>Initialize the three models and store them in <code>'clf_A'</code>, <code>'clf_B'</code>, and <code>'clf_C'</code>.<ul>
-<li>Use a <code>'random_state'</code> for each model you use, if provided.</li>
-<li><strong>Note:</strong> Use the default settings for each model — you will tune one specific model in a later section.</li>
+<li>Use a <code>'random_state'</code> for each model we use, if provided.</li>
+<li><strong>Note:</strong> Use the default settings for each model — we will tune one specific model in a later section.</li>
 </ul>
 </li>
 <li>Calculate the number of records equal to 1%, 10%, and 100% of the training data.<ul>
@@ -13414,7 +13373,7 @@ In the code block below, you will need to implement the following:</p>
 </ul>
 </li>
 </ul>
-<p><strong>Note:</strong> Depending on which algorithms you chose, the following implementation may take some time to run!</p>
+<p><strong>Note:</strong> Depending on which algorithms we chose, the following implementation may take some time to run!</p>
 
 </div>
 </div>
@@ -14184,7 +14143,7 @@ RK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Improving-Results">Improving Results<a class="anchor-link" href="#Improving-Results">&#182;</a></h2><p>In this final section, you will choose from the three supervised learning models the <em>best</em> model to use on the student data. You will then perform a grid search optimization for the model over the entire training set (<code>X_train</code> and <code>y_train</code>) by tuning at least one parameter to improve upon the untuned model's F-score.</p>
+<h2 id="Improving-Results">Improving Results<a class="anchor-link" href="#Improving-Results">&#182;</a></h2><p>In this final section, we will choose from the three supervised learning models the <em>best</em> model to use on the student data. We will then perform a grid search optimization for the model over the entire training set (<code>X_train</code> and <code>y_train</code>) by tuning at least one parameter to improve upon the untuned model's F-score.</p>
 
 </div>
 </div>
@@ -14193,15 +14152,9 @@ RK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-3---Choosing-the-Best-Model">Question 3 - Choosing the Best Model<a class="anchor-link" href="#Question-3---Choosing-the-Best-Model">&#182;</a></h3><ul>
-<li>Based on the evaluation you performed earlier, in one to two paragraphs, explain to <em>CharityML</em> which of the three models you believe to be most appropriate for the task of identifying individuals that make more than \$50,000. </li>
-</ul>
-<p><strong> HINT: </strong> 
-Look at the graph at the bottom left from the cell above(the visualization created by <code>vs.evaluate(results, accuracy, fscore)</code>) and check the F score for the testing set when 100% of the training set is used. Which model has the highest score? Your answer should include discussion of the:</p>
-<ul>
-<li>metrics - F score on the testing when 100% of the training data is used, </li>
-<li>prediction/training time</li>
-<li>the algorithm's suitability for the data.</li>
+<h3 id="Choosing-the-Best-Model">Choosing the Best Model<a class="anchor-link" href="#Choosing-the-Best-Model">&#182;</a></h3><ul>
+<li>Based on the evaluation we performed earlier, Adaboost-Adaboost got a better accuracy and Fscore in testing set than SVM and decision tree, and prediction and training time for Adaboost is low which makes it a good algorithm for this problem. Decison tree seems to overfit the data, it performs well on the training set but on testing set, it doesnt get high score.
+SVM has a high training and predcition time which makes it challenging when training a model with parameter tuning. Also SVM's Fscore was zero on 1% of training set. It can be due to the reason that it predicted everything positive.</li>
 </ul>
 
 </div>
@@ -14211,32 +14164,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
-<p>Adaboost-Adaboost got a better accuracy and Fscore in testing set than SVM and decision tree, and prediction and training time for Adaboost is low which makes it a good algorithm for this problem. Decison tree seems to overfit the data, it performs well on the training set but on testing set, it doesnt get high score.
- SVM has a high training and predcition time which makes it challenging when training a model with parameter tuning. Also SVM's Fscore was zero on 1% of training set. It can be due to the reason that it predicted everything positive.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-4---Describing-the-Model-in-Layman's-Terms">Question 4 - Describing the Model in Layman's Terms<a class="anchor-link" href="#Question-4---Describing-the-Model-in-Layman's-Terms">&#182;</a></h3><ul>
-<li>In one to two paragraphs, explain to <em>CharityML</em>, in layman's terms, how the final model chosen is supposed to work. Be sure that you are describing the major qualities of the model, such as how the model is trained and how the model makes a prediction. Avoid using advanced mathematical jargon, such as describing equations.</li>
-</ul>
-<p><strong> HINT: </strong></p>
-<p>When explaining your model, if using external resources please include all citations.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
-<p>Source:<a href="https://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/">https://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/</a>
+<h3 id="Describing-the-Model-in-Layman's-Terms">Describing the Model in Layman's Terms<a class="anchor-link" href="#Describing-the-Model-in-Layman's-Terms">&#182;</a></h3><p>Source:<a href="https://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/">https://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/</a>
 <a href="https://scikit-learn.org/stable/modules/ensemble.html">https://scikit-learn.org/stable/modules/ensemble.html</a>
 Boosting is an ensemble technique that attempts to create a strong classifier from a number of weak classifiers(for example decision tree).
 This is done by building a model from the training data, then creating a second model that attempts to correct the errors from the first model. Based on how good these models are at classifying the data, they have greater influence over the resulting model. Models are added until the training set is predicted perfectly or a maximum number of models are added.
@@ -14250,14 +14178,12 @@ The idea is like learning vocabulary with leitner box. You put more effort(or ac
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Implementation:-Model-Tuning">Implementation: Model Tuning<a class="anchor-link" href="#Implementation:-Model-Tuning">&#182;</a></h3><p>Fine tune the chosen model. Use grid search (<code>GridSearchCV</code>) with at least one important parameter tuned with at least 3 different values. You will need to use the entire training set for this. In the code cell below, you will need to implement the following:</p>
+<h3 id="Implementation:-Model-Tuning">Implementation: Model Tuning<a class="anchor-link" href="#Implementation:-Model-Tuning">&#182;</a></h3><p>In order to fine tune the chosen model, we use grid search (<code>GridSearchCV</code>) with at least one important parameter tuned with at least 3 different values. We will need to use the entire training set for this. In the code cell below, we will need to implement the following:</p>
 <ul>
 <li>Import <a href="http://scikit-learn.org/0.17/modules/generated/sklearn.grid_search.GridSearchCV.html"><code>sklearn.grid_search.GridSearchCV</code></a> and <a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html"><code>sklearn.metrics.make_scorer</code></a>.</li>
-<li>Initialize the classifier you've chosen and store it in <code>clf</code>.<ul>
+<li>Initialize the classifier we've chosen and store it in <code>clf</code>.</li>
 <li>Set a <code>random_state</code> if one is available to the same state you set before.</li>
-</ul>
-</li>
-<li>Create a dictionary of parameters you wish to tune for the chosen model.<ul>
+<li>Create a dictionary of parameters we wish to tune for the chosen model.<ul>
 <li>Example: <code>parameters = {'parameter' : [list of values]}</code>.</li>
 <li><strong>Note:</strong> Avoid tuning the <code>max_features</code> parameter of your learner if that parameter is available!</li>
 </ul>
@@ -14459,21 +14385,7 @@ Final F-score on the testing data: 0.7396
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-5---Final-Model-Evaluation">Question 5 - Final Model Evaluation<a class="anchor-link" href="#Question-5---Final-Model-Evaluation">&#182;</a></h3><ul>
-<li>What is your optimized model's accuracy and F-score on the testing data? </li>
-<li>Are these scores better or worse than the unoptimized model? </li>
-<li>How do the results from your optimized model compare to the naive predictor benchmarks you found earlier in <strong>Question 1</strong>?_  </li>
-</ul>
-<p><strong>Note:</strong> Fill in the table below with your results, and then provide discussion in the <strong>Answer</strong> box.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Results:">Results:<a class="anchor-link" href="#Results:">&#182;</a></h4><table>
+<h3 id="Final-Model-Evaluation">Final Model Evaluation<a class="anchor-link" href="#Final-Model-Evaluation">&#182;</a></h3><h4 id="Results:">Results:<a class="anchor-link" href="#Results:">&#182;</a></h4><table>
 <thead><tr>
 <th style="text-align:center">Metric</th>
 <th style="text-align:center">Unoptimized Model</th>
@@ -14493,15 +14405,6 @@ Final F-score on the testing data: 0.7396
 </tr>
 </tbody>
 </table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
 <p>Considering accuracy and Fscore, both optimized and unoptimized models perform better than the Naive predictor benchmark. Optimized model performs a little bit better than unoptimized model.</p>
 
 </div>
@@ -14513,7 +14416,7 @@ Final F-score on the testing data: 0.7396
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="Feature-Importance">Feature Importance<a class="anchor-link" href="#Feature-Importance">&#182;</a></h2><p>An important task when performing supervised learning on a dataset like the census data we study here is determining which features provide the most predictive power. By focusing on the relationship between only a few crucial features and the target label we simplify our understanding of the phenomenon, which is most always a useful thing to do. In the case of this project, that means we wish to identify a small number of features that most strongly predict whether an individual makes at most or more than \$50,000.</p>
-<p>Choose a scikit-learn classifier (e.g., adaboost, random forests) that has a <code>feature_importance_</code> attribute, which is a function that ranks the importance of features according to the chosen classifier.  In the next python cell fit this classifier to training set and use this attribute to determine the top 5 most important features for the census dataset.</p>
+<p>We'll choose a scikit-learn classifier (e.g., adaboost, random forests) that has a <code>feature_importance_</code> attribute, which is a function that ranks the importance of features according to the chosen classifier.</p>
 
 </div>
 </div>
@@ -14522,17 +14425,7 @@ Final F-score on the testing data: 0.7396
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-6---Feature-Relevance-Observation">Question 6 - Feature Relevance Observation<a class="anchor-link" href="#Question-6---Feature-Relevance-Observation">&#182;</a></h3><p>When <strong>Exploring the Data</strong>, it was shown there are thirteen available features for each individual on record in the census data. Of these thirteen records, which five features do you believe to be most important for prediction, and in what order would you rank them and why?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer</p>
-<p>One of the features that affects the income is age. People who are younger than 18 or 17 or older than 60 are less likely to have income. Also people's income will increase as they get older because of raises, promotions or switching to new jobs. 
+<h3 id="Feature-Relevance-Observation">Feature Relevance Observation<a class="anchor-link" href="#Feature-Relevance-Observation">&#182;</a></h3><p>One of the features that affects the income is age. People who are younger than 18 or 17 or older than 60 are less likely to have income. Also people's income will increase as they get older because of raises, promotions or switching to new jobs. 
 Another important factor is education-num. People with higher levels of eductaion tend to make more money than others.
 Hours-per-week is also another important factor that affects people income. People who work full time get paid more than their peers who work part time. 
 Occupation is a feature that would affect income. some occupations typically earn workers more than others. 
@@ -14545,14 +14438,7 @@ Capital gain- people with more capital gain are more likely to make more money. 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Implementation---Extracting-Feature-Importance">Implementation - Extracting Feature Importance<a class="anchor-link" href="#Implementation---Extracting-Feature-Importance">&#182;</a></h3><p>Choose a <code>scikit-learn</code> supervised learning algorithm that has a <code>feature_importance_</code> attribute availble for it. This attribute is a function that ranks the importance of each feature when making predictions based on the chosen algorithm.</p>
-<p>In the code cell below, you will need to implement the following:</p>
-<ul>
-<li>Import a supervised learning model from sklearn if it is different from the three used earlier.</li>
-<li>Train the supervised model on the entire training set.</li>
-<li>Extract the feature importances using <code>'.feature_importances_'</code>.</li>
-</ul>
-
+<h3 id="Implementation---Extracting-Feature-Importance">Implementation - Extracting Feature Importance<a class="anchor-link" href="#Implementation---Extracting-Feature-Importance">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14894,23 +14780,7 @@ kZRRACgiIiKSMgoARURERFJGAaCIiIhIyigAFBEREUkZBYAiIiIiKaMAUERERCRl/h+Z8Rxh+97A
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-7---Extracting-Feature-Importance">Question 7 - Extracting Feature Importance<a class="anchor-link" href="#Question-7---Extracting-Feature-Importance">&#182;</a></h3><p>Observe the visualization created above which displays the five most relevant features for predicting if an individual makes at most or above \$50,000.</p>
-<ul>
-<li>How do these five features compare to the five features you discussed in <strong>Question 6</strong>?</li>
-<li>If you were close to the same answer, how does this visualization confirm your thoughts? </li>
-<li>If you were not close, why do you think these features are more relevant?</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
-<p>I correctly guessed 4 out of 5 features which are important in income. However the ranking of the importance of different features were not correct. Occupation was not among the top five features which are important in income.It is a categorical feature and it should be separately classified according to which occupation is high paying or not.
-capital-loss was a feature that was related to income, and it is a numerical feature. It is related to a person's wealth so definitely it is related to income</p>
+<h3 id="Extracting-Feature-Importance">Extracting Feature Importance<a class="anchor-link" href="#Extracting-Feature-Importance">&#182;</a></h3><p>According to the visualization created above which displays the five most relevant features for predicting if an individual makes at most or above \$50,000, I correctly guessed 4 out of 5 features which are important in income. However the ranking of the importance of different features were not correct. Occupation was not among the top five features which are important in income.It is a categorical feature and it should be separately classified according to which occupation is high paying or not. capital-loss was a feature that was related to income, and it is a numerical feature. It is related to a person's wealth so definitely it is related to income</p>
 
 </div>
 </div>
@@ -14986,20 +14856,7 @@ F-score on testing data: 0.6920
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-8---Effects-of-Feature-Selection">Question 8 - Effects of Feature Selection<a class="anchor-link" href="#Question-8---Effects-of-Feature-Selection">&#182;</a></h3><ul>
-<li>How does the final model's F-score and accuracy score on the reduced data using only five features compare to those same scores when all features are used?</li>
-<li>If training time was a factor, would you consider using the reduced data as your training set?</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
-<p>Based on accuracy and Fscore, the final model on full data outperforms the one on reduced data. Also unoptimized model on full data outperforms final model on reduced data. Also considering training time, unoptimized model on full data is fast enough compared to final model on reduced data. So I wouldn't recommend reducing the data.</p>
+<h3 id="Effects-of-Feature-Selection">Effects of Feature Selection<a class="anchor-link" href="#Effects-of-Feature-Selection">&#182;</a></h3><p>Based on accuracy and Fscore, the final model on full data outperforms the one on reduced data. Also unoptimized model on full data outperforms final model on reduced data. Also considering training time, unoptimized model on full data is fast enough compared to final model on reduced data. So I wouldn't recommend reducing the data.</p>
 
 </div>
 </div>
